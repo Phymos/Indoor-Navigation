@@ -28,7 +28,7 @@ indoor-navigation/
 
 Setup
 Requirements: Python 3.8+
-bash# 1. Clone the repo
+# 1. Clone the repo
 git clone https://github.com/your-username/indoor-navigation.git
 cd indoor-navigation
 
