@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Indoor Navigation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+
+      <h1 class="card-title">Indoor Navigation</h1>
+      
+      <button id="theme-switch">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+      </button>
+
+      <div class="form-group">
+        <label>Başlangıç Noktası</label>
+        <select id="startRoom">
+          <option value="" disabled selected >-- Bir konum seçin --</option>
+          <!-- kat 2 -->
+          <option value="Lobby_Top">Lobby Top</option>
+          <option value="Lobby_Mid">Lobby Mid</option>
+          <option value="Lobby_Bottom">Lobby Bottom</option>
+          <option value="Lobby_Corridor_R2">Lobby Corridor R2</option>
+          <option value="Lobby_Corridor_R3">Lobby Corridor R3</option>
+          <option value="Lobby_Corridor_R4">Lobby Corridor R4</option>
+          <option value="Lobby_Corridor_R5">Lobby Corridor R5</option>
+          <option value="R1">R1</option>
+          <option value="R2">R2</option>
+          <option value="R3">R3</option>
+          <option value="R4">R4</option>
+          <option value="R5">R5</option>
+          <option value="E">E</option>
+
+          <!-- Kat3 odaları -->
+          <option value="E_Kat3">E Kat3</option>
+          <option value="Living_Quarters_First">Living Quarters First</option>
+          <option value="Living_Quarters_Mid">Living Quarters Mid</option>
+          <option value="Living_Quarters_Last">Living Quarters Last</option>
+          <option value="BALCONY1">Balcony 1</option>
+          <option value="BALCONY2">Balcony 2</option>
+          <option value="BALCONY3">Balcony 3</option>
+          <option value="KITCHEN1">Kitchen 1</option>
+          <option value="KITCHEN2">Kitchen 2</option>
+          <option value="KITCHEN3">Kitchen 3</option>
+          <option value="LIVINGROOM1.1">Living Room 1</option>
+          <option value="LIVINGROOM2.1">Living Room 2</option>
+          <option value="LIVINGROOM3.1">Living Room 3</option>
+          <option value="LIVINGROOM1.2">Living Room 1 (Alt)</option>
+          <option value="LIVINGROOM2.2">Living Room 2 (Alt)</option>
+          <option value="LIVINGROOM3.2">Living Room 3 (Alt)</option>
+          <option value="BEDROOM1">Bedroom 1</option>
+          <option value="BEDROOM2">Bedroom 2</option>
+          <option value="BEDROOM3">Bedroom 3</option>
+          <option value="BATHROOM1">Bathroom 1</option>
+          <option value="BATHROOM2">Bathroom 2</option>
+          <option value="BATHROOM3">Bathroom 3</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Hedef Noktası</label>
+        <select id="endRoom">
+          <option value="" disabled selected>-- Bir konum seçin --</option>
+          <!-- kat 2 -->
+          <option value="Lobby_Top">Lobby Top</option>
+          <option value="Lobby_Mid">Lobby Mid</option>
+          <option value="Lobby_Bottom">Lobby Bottom</option>
+          <option value="Lobby_Corridor_R2">Lobby Corridor R2</option>
+          <option value="Lobby_Corridor_R3">Lobby Corridor R3</option>
+          <option value="Lobby_Corridor_R4">Lobby Corridor R4</option>
+          <option value="Lobby_Corridor_R5">Lobby Corridor R5</option>
+          <option value="R1">R1</option>
+          <option value="R2">R2</option>
+          <option value="R3">R3</option>
+          <option value="R4">R4</option>
+          <option value="R5">R5</option>
+          <option value="E">E</option>
+
+          <!-- Kat3 odaları -->
+          <option value="E_Kat3">E Kat3</option>
+          <option value="Living_Quarters_First">Living Quarters First</option>
+          <option value="Living_Quarters_Mid">Living Quarters Mid</option>
+          <option value="Living_Quarters_Last">Living Quarters Last</option>
+          <option value="BALCONY1">Balcony 1</option>
+          <option value="BALCONY2">Balcony 2</option>
+          <option value="BALCONY3">Balcony 3</option>
+          <option value="KITCHEN1">Kitchen 1</option>
+          <option value="KITCHEN2">Kitchen 2</option>
+          <option value="KITCHEN3">Kitchen 3</option>
+          <option value="LIVINGROOM1.1">Living Room 1</option>
+          <option value="LIVINGROOM2.1">Living Room 2</option>
+          <option value="LIVINGROOM3.1">Living Room 3</option>
+          <option value="LIVINGROOM1.2">Living Room 1 (Alt)</option>
+          <option value="LIVINGROOM2.2">Living Room 2 (Alt)</option>
+          <option value="LIVINGROOM3.2">Living Room 3 (Alt)</option>
+          <option value="BEDROOM1">Bedroom 1</option>
+          <option value="BEDROOM2">Bedroom 2</option>
+          <option value="BEDROOM3">Bedroom 3</option>
+          <option value="BATHROOM1">Bathroom 1</option>
+          <option value="BATHROOM2">Bathroom 2</option>
+          <option value="BATHROOM3">Bathroom 3</option>
+        </select>
+      </div>
+      
+      <button class="primary-btn" id="yolu-bulma-tuşu">
+        Yolu Bul
+      </button>
+
+    </div>
+
+    <div class="map-area">
+      <div class="map-container">
+        <img id="myMap" src="{{ url_for('static', filename='floor 2.png') }}" alt="harita" class="myMap">
+        <canvas id="myCanvas" width="1105" height="531"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
